@@ -4,8 +4,8 @@ import chisel3._
 import chisel3.util._
 import scala.collection.mutable.HashMap
 
-object hashmap_test extends App {
-  val taskId: HashMap[String,String] =
+object VTA_ISA extends App {
+  private val taskId: HashMap[String,String] =
     HashMap(
       ("load","000"),
       ("store","001"),
@@ -13,6 +13,22 @@ object hashmap_test extends App {
       ("finish","011"),
       ("alu","100")
      )
+
+  private val memId: HashMap[String,String] =
+    HashMap(
+      ("uop","00"),
+      ("wgt","01"),
+      ("inp","10"),
+      ("acc","11")
+    )
+
+  private val aluId: HashMap[String,String] =
+    HashMap(
+      ("minpool","00"),
+      ("maxpool","01"),
+      ("add","10"),
+      ("shift","11")
+    )
 
   println(taskId.get("load"))
   println(taskId.get("store"))
